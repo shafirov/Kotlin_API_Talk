@@ -5,10 +5,14 @@ package ingredients._08
 data class Person(val lastName: String, val firstName: String)
 
 fun display(people: List<Person>) {
-    val names = people map { "${it.firstName} ${it.lastName}"}
+    val names = people map { "${it.firstName} ${it.lastName}" }
+
     println(names.makeString(", "))
+
     println(names.makeString(separator = ", ", prefix = "[", postfix = "]"))
-    println(names.makeString(", ", prefix = "[", postfix = "]", limit = 5, truncated = "*"))
+
+    println(names.makeString(", ", prefix = "[", postfix = "]",
+            limit = 5, truncated = "*"))
 }
 
 fun main(args: Array<String>) {

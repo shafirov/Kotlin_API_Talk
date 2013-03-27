@@ -4,9 +4,9 @@ import java.util.HashMap
 import ingredients.*
 
 class Person {
-    private val bag : MutableMap<String, String> = HashMap()
+    private val bag: MutableMap<String, String> = HashMap()
 
-    var age : Int
+    var age: Int
         get() = Integer.parseInt(bag.get("age") ?: error("Age is not specified!"))
         set(a) {
             bag.put("age", a.toString())
@@ -15,5 +15,7 @@ class Person {
 
 //--------------------------------------------------------------------------------------------------------
 
-fun teenagers(people: List<Person>) = people filter {it.age in 11..16} // *it* doesn't look right here :)
+fun teenagers(people: List<Person>) = people filter { it.age in 11..16 }
+// *it* doesn't look right here :)
+
 fun Person.letsHaveBirthday() = age++

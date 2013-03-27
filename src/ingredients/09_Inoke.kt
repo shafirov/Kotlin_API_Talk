@@ -4,8 +4,8 @@ import java.util.HashMap
 import ingredients._09.Color.*
 
 class Machine<A, S: Enum<S>>(val initial: S) {
-    private val transitions = HashMap<S, (s : A) -> S>()
-    fun S.invoke(transition: (s : A) -> S) {
+    private val transitions = HashMap<S, (s: A) -> S>()
+    fun S.invoke(transition: (s: A) -> S) {
         transitions[this] = transition
     }
 
@@ -19,7 +19,9 @@ class Machine<A, S: Enum<S>>(val initial: S) {
     }
 }
 
-fun <A, S: Enum<S>> machine(initial: S, build: Machine<A, S>.()->Unit) : Machine<A, S> {
+fun <A, S: Enum<S>> machine(initial: S,
+                            build: Machine<A, S>.()->Unit): Machine<A, S>
+{
     val answer = Machine<A, S>(initial)
     answer.build()
     return answer

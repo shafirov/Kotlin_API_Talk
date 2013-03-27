@@ -1,6 +1,6 @@
 package ingredients._05
 
-public trait StringEnum<T : Enum<T>> : Enum<T> {
+public trait StringEnum<T: Enum<T>>: Enum<T> {
     fun value() = name()
 }
 
@@ -8,7 +8,7 @@ public trait StringEnum<T : Enum<T>> : Enum<T> {
 
 enum class Colors : StringEnum<Colors> {black white green blue red pink}
 
-enum class MimeTypes(val display : String) : StringEnum<MimeTypes> {
+enum class MimeTypes(val display: String): StringEnum<MimeTypes> {
     pdf : MimeTypes("application/pdf")
     form : MimeTypes("multipart/form-data")
 
@@ -20,7 +20,7 @@ fun main(args: Array<String>) {
     describe(Colors.red)
 }
 
-fun describe(item : StringEnum<*>) {
+fun describe(item: StringEnum<*>) {
     // Calls name() from Enum, value() from the trait
     println("${item.javaClass.getSimpleName()}.${item.name()} = ${item.value()}")
 }

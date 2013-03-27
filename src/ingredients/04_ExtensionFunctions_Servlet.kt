@@ -16,7 +16,7 @@ class Server() {
     }
 }
 
-fun server(init: Server.()->Unit) : Server {
+fun server(init: Server.()->Unit): Server {
     val answer = Server()
     answer.init()
     return answer
